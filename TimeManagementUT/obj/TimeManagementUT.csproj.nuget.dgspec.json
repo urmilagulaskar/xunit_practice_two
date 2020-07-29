@@ -1,0 +1,134 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementUT\\TimeManagementUT.csproj": {}
+  },
+  "projects": {
+    "D:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementBooking\\TimeManagementBooking.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementBooking\\TimeManagementBooking.csproj",
+        "projectName": "TimeManagementBooking",
+        "projectPath": "D:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementBooking\\TimeManagementBooking.csproj",
+        "packagesPath": "C:\\Users\\Urmila_gulaskar\\.nuget\\packages\\",
+        "outputPath": "D:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementBooking\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Urmila_gulaskar\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementUT\\TimeManagementUT.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementUT\\TimeManagementUT.csproj",
+        "projectName": "TimeManagementUT",
+        "projectPath": "D:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementUT\\TimeManagementUT.csproj",
+        "packagesPath": "C:\\Users\\Urmila_gulaskar\\.nuget\\packages\\",
+        "outputPath": "D:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementUT\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Urmila_gulaskar\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementBooking\\TimeManagementBooking.csproj": {
+                "projectPath": "D:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementBooking\\TimeManagementBooking.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.5.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "moq": {
+              "target": "Package",
+              "version": "[4.14.5, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

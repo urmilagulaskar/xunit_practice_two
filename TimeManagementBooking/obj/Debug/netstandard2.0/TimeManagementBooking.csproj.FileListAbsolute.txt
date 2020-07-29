@@ -1,0 +1,4 @@
+D:\Urmila_Gulaskar\HandsOn\xunit_dotnet_core\TimeManagementBooking\obj\Debug\netstandard2.0\TimeManagementBooking.csprojAssemblyReference.cache
+D:\Urmila_Gulaskar\HandsOn\xunit_dotnet_core\TimeManagementBooking\obj\Debug\netstandard2.0\TimeManagementBooking.AssemblyInfoInputs.cache
+D:\Urmila_Gulaskar\HandsOn\xunit_dotnet_core\TimeManagementBooking\obj\Debug\netstandard2.0\TimeManagementBooking.AssemblyInfo.cs
+D:\Urmila_Gulaskar\HandsOn\xunit_dotnet_core\TimeManagementBooking\obj\Debug\netstandard2.0\TimeManagementBooking.csproj.CoreCompileInputs.cache
