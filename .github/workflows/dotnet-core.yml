@@ -35,7 +35,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - run: npm ci
+      - run: npm install 
+      - run: npm --v
+      #- run: npm ci
       - run: npm run lint
   release:
     needs: validate
