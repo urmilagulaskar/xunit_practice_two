@@ -2,9 +2,9 @@ name: .NET Core
 
 on:
   push:
-    branches: [ master ]
+    branches: [ urmilagulaskar-patch-usingGitVersion ]
   pull_request:
-    branches: [ master ]
+    branches: [ urmilagulaskar-patch-usingGitVersion ]
 
 jobs:
   build_and_test:
@@ -20,19 +20,19 @@ jobs:
       run: git fetch --prune --unshallow
 
       
-#     - name: Setup .NET Core
-#       uses: actions/setup-dotnet@v1
-#       with:
-#         dotnet-version: 3.1.301
-#     - run: |
-#         dotnet --version
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.301
+    - run: |
+        dotnet --version
                        
-   # - name: Install dependencies
-     # run: dotnet restore
-   # - name: Build
-   #   run: dotnet build --configuration Release --no-restore
-  #  - name: Test
-    #  run: dotnet test --no-restore --verbosity normal
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+    - name: Test
+      run: dotnet test --no-restore --verbosity normal
     
     - name: Install git version
       uses: gittools/actions/gitversion/setup@v0.9.2
