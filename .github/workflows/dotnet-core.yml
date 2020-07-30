@@ -2,9 +2,9 @@ name: .NET Core
 
 on:
   push:
-    branches: [ urmilagulaskar-patch-usingGitVersion ]
+    branches: [ urmilagulaskar-patch-UsingGitVersion, master ]
   pull_request:
-    branches: [ urmilagulaskar-patch-usingGitVersion ]
+    branches: [ urmilagulaskar-patch-UsingGitVersion, master ]
 
 jobs:
   build_and_test:
