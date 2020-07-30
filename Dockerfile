@@ -4,6 +4,11 @@ FROM node:12
 RUN mkdir /action
 WORKDIR /action
 
+
+# install node deps(for semantic versioning)
+COPY ./package.json ./
+RUN npm ci --only=prod
+
 # copy csproj and restore as distinct layers
 COPY *.sln .
 COPY TimeManagementBooking/*.csproj ./TimeManagementBooking/
