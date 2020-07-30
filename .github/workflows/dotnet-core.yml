@@ -26,11 +26,12 @@ jobs:
         dotnet-version: 3.1.301
     - run: |
         dotnet --version
+        dotnet add package GitVersion.CommandLine --version 5.3.7
         
-    - name: Install git version
-      uses: gittools/actions/gitversion/setup@main
-      with:
-        versionSpec: '5.3.x'
+    #- name: Install git version
+    #  uses: gittools/actions/gitversion/setup@v
+    #  with:
+     #   versionSpec: '5.3.x'
         
     - name: Use GitVersion
       id: gitversion # step id used as reference for output values
