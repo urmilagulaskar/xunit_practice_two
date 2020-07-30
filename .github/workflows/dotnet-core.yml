@@ -26,18 +26,18 @@ jobs:
         dotnet-version: 3.1.301
     - run: |
         dotnet --version
-             
-    - name: Install git version
-      uses: gittools/actions/gitversion/setup@v0.9
-      with:
-       versionSpec: '5.1.x'
-           
+                       
     - name: Install dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+    
+    - name: Install git version
+      uses: gittools/actions/gitversion/setup@v0.9
+      with:
+       versionSpec: '5.1.x'
     
     - name: Use GitVersion
       id: gitversion # step id used as reference for output values
