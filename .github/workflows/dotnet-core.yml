@@ -37,7 +37,7 @@ jobs:
           node-version: 12.x
       - run: npm install 
       - run: npm --v
-      #- run: npm ci
+      - run: npm ci
       - run: npm run lint
   release:
     needs: validate
@@ -46,7 +46,7 @@ jobs:
       - uses: actions/checkout@master
 
       - name: semantic-release
-        if: github.ref == 'refs/heads/master'
+       # if: github.ref == 'refs/heads/master'
         id: semantic
         uses: ./
         env:
