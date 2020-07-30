@@ -1,41 +1,28 @@
-name: 'Create new Semantic Version'
-description: 'Determine the next semantic version and optionally tag it.'
-inputs:
-  bump:
-    description: 'The type of semantic version increment to make (one of major, premajor, minor, preminor, patch, prepatch, or prerelease)'
-    required: true
-  per_branch:
-    description: 'If specified, only tags merged to the same branch will be considered. Useful for maintenance branches. Note: this requires fetching the history when checking out.'
-    required: false
-    default: false
-  github_token:
-    description: 'Token to use to push to the repo. Pass in using `secrets.GITHUB_TOKEN`.'
-    required: true
-  dry_run:
-    description: 'If true, only calculate the new version and exit successfully.'
-    required: false
-    default: false
-  sha:
-    description: 'Commit SHA to use to create tag. Pass in if you modify the current HEAD.'
-    required: false
-  prefix:
-    description: 'Version prefix used to create tag. Usually empty or "v" or "=".'
-    required: false
-    default: ""
-  preid:
-    description: 'Identifier to be used to prefix premajor, preminor, prepatch or prerelease version increments.'
-    required: false
-    default: ""
-outputs:
-  version:
-    description: 'The new semantic version that was calculated.'
-  version_optimistic:
-    description: 'The major and minor components of the semantic version that was calculated.'
-  version_tag:
-    description: 'The version string used to create the tag.'
-runs:
-  using: 'node12'
-  main: 'dist/index.js'
+name: 'Semantic Release Action'
+description:
+  'Runs `semantic-release`. Respects .releaserc.js in your repo. Exports version variables for you
+  to use in subsequent actions.'
+author: 'codfish'
 branding:
-  icon: 'tag'  
-  color: 'purple'
+  icon: 'arrow-up-right'
+  color: 'orange'
+inputs:
+  branch:
+    description:
+      'The branch on which releases should happen.
+      https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md#branch'
+outputs:
+  new-release-published:
+    description:
+      "Either `'true'` when a new release was published or `'false'` when no release was published"
+  release-version:
+    description: "The new releases' semantic version, i.e. `1.8.3`"
+  release-major:
+    description: "The new releases' major version number, i.e. `1`"
+  release-minor:
+    description: "The new releases' minor version number, i.e. `8`"
+  release-patch:
+    description: "The new releases' patch version number, i.e. `3`"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
