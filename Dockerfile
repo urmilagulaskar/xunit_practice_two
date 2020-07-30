@@ -11,6 +11,7 @@ RUN npm install
 RUN npm ci 
 
 # copy csproj and restore as distinct layers
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS build
 COPY *.sln .
 COPY TimeManagementBooking/*.csproj ./TimeManagementBooking/
 RUN dotnet restore
