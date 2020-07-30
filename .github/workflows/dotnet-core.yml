@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest]
 
     steps:
     - uses: actions/checkout@v2
@@ -25,13 +25,38 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-      
-    - name: Start versioning
-      id: next_version
-      uses: ./
-      with: 
-        dry_run: true
-        bump: ${{ ... }}
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+  
+  validate:
+    runs-on: ubuntu-latest
     
-    - run: echo '${{ steps.next_version.outputs.version }}' 
+    steps:
+      - uses: actions/checkout@master
+      
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: npm ci
+      - run: npm run lint
+  release:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: semantic-release
+        if: github.ref == 'refs/heads/master'
+        id: semantic
+        uses: ./
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Test output
+        if: steps.semantic.outputs.new-release-published == 'true'
+        run: |
+          echo "$OUTPUTS"
+          echo "$NEW_RELEASE_PUBLISHED"
+          echo "$RELEASE_MAJOR"
+          echo "$RELEASE_MINOR"
+          echo "$RELEASE_PATCH"
+        env:
+          OUTPUTS: ${{ toJson(steps.semantic.outputs) }}
