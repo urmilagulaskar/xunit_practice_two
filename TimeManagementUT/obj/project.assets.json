@@ -6180,11 +6180,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementUT\\TimeManagementUT.csproj",
+      "projectUniqueName": "d:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementUT\\TimeManagementUT.csproj",
       "projectName": "TimeManagementUT",
-      "projectPath": "D:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementUT\\TimeManagementUT.csproj",
+      "projectPath": "d:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementUT\\TimeManagementUT.csproj",
       "packagesPath": "C:\\Users\\Urmila_gulaskar\\.nuget\\packages\\",
-      "outputPath": "D:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementUT\\obj\\",
+      "outputPath": "d:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementUT\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Urmila_gulaskar\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -6198,8 +6198,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementBooking\\TimeManagementBooking.csproj": {
-              "projectPath": "D:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementBooking\\TimeManagementBooking.csproj"
+            "d:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementBooking\\TimeManagementBooking.csproj": {
+              "projectPath": "d:\\Urmila_Gulaskar\\HandsOn\\xunit_practice_two\\TimeManagementBooking\\TimeManagementBooking.csproj"
             }
           }
         }

@@ -7,3 +7,12 @@ D:\Urmila_Gulaskar\HandsOn\xunit_dotnet_core\TimeManagementBooking\obj\Release\n
 D:\Urmila_Gulaskar\HandsOn\xunit_dotnet_core\TimeManagementBooking\obj\Release\netstandard2.1\TimeManagementBooking.csproj.CoreCompileInputs.cache
 D:\Urmila_Gulaskar\HandsOn\xunit_dotnet_core\TimeManagementBooking\obj\Release\netstandard2.1\TimeManagementBooking.dll
 D:\Urmila_Gulaskar\HandsOn\xunit_dotnet_core\TimeManagementBooking\obj\Release\netstandard2.1\TimeManagementBooking.pdb
+D:\Urmila_Gulaskar\HandsOn\xunit_practice_two\TimeManagementBooking\bin\Release\netstandard2.1\TimeManagementBooking.deps.json
+D:\Urmila_Gulaskar\HandsOn\xunit_practice_two\TimeManagementBooking\bin\Release\netstandard2.1\TimeManagementBooking.dll
+D:\Urmila_Gulaskar\HandsOn\xunit_practice_two\TimeManagementBooking\bin\Release\netstandard2.1\TimeManagementBooking.pdb
+D:\Urmila_Gulaskar\HandsOn\xunit_practice_two\TimeManagementBooking\obj\Release\netstandard2.1\TimeManagementBooking.csprojAssemblyReference.cache
+D:\Urmila_Gulaskar\HandsOn\xunit_practice_two\TimeManagementBooking\obj\Release\netstandard2.1\TimeManagementBooking.AssemblyInfoInputs.cache
+D:\Urmila_Gulaskar\HandsOn\xunit_practice_two\TimeManagementBooking\obj\Release\netstandard2.1\TimeManagementBooking.AssemblyInfo.cs
+D:\Urmila_Gulaskar\HandsOn\xunit_practice_two\TimeManagementBooking\obj\Release\netstandard2.1\TimeManagementBooking.csproj.CoreCompileInputs.cache
+D:\Urmila_Gulaskar\HandsOn\xunit_practice_two\TimeManagementBooking\obj\Release\netstandard2.1\TimeManagementBooking.dll
+D:\Urmila_Gulaskar\HandsOn\xunit_practice_two\TimeManagementBooking\obj\Release\netstandard2.1\TimeManagementBooking.pdb
