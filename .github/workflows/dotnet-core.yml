@@ -28,7 +28,7 @@ jobs:
         dotnet --version
         
     - name: Install git version
-      uses: gittools/actions/gitversion/setup@latest
+      uses: gittools/actions/gitversion/setup@main
       with:
         versionSpec: '5.3.x'
         
