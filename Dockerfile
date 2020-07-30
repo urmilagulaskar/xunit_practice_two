@@ -10,21 +10,6 @@ COPY ./package.json ./
 RUN npm install
 RUN npm ci 
 
-# copy csproj and restore as distinct layers
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS build
-COPY *.sln .
-COPY TimeManagementBooking/*.csproj ./TimeManagementBooking/
-RUN dotnet restore
-
-# copy everything else and build app
-COPY TimeManagementBooking/. ./TimeManagementBooking/
-WORKDIR /action/TimeManagementBooking
-RUN dotnet publish -c Release -o out
-
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
-WORKDIR /action
-COPY --from=build /action/TimeManagementBooking/out ./
-
 # copy in entrypoint after dependency installation
 COPY entrypoint.js .
 
