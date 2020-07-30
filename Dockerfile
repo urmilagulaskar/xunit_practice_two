@@ -7,7 +7,7 @@ WORKDIR /action
 
 # install node deps(for semantic versioning)
 COPY ./package.json ./
-RUN npm ci --only=prod
+RUN npm ci 
 
 # copy csproj and restore as distinct layers
 COPY *.sln .
