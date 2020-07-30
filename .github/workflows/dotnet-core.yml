@@ -18,10 +18,7 @@ jobs:
     
     - name: Fetch all history for all tag and branches
       run: git fetch --prune
-    - run: |
-        npm install
-        npm run format-check
-        npm run build:github
+
       
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
