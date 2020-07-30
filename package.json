@@ -1,0 +1,42 @@
+{
+  "name": "semantic-release-action",
+  "version": "0.0.0-semantically-released",
+  "description": "GitHub action runs `semantic-release`. Respects .releaserc.js in your repo. Exports version variables for you to use in subsequent actions.",
+  "homepage": "https://github.com/urmilagulaskar/xunit_practice_two.git",
+  "keywords": [],
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@babel/runtime": "^7.9.6",
+    "semantic-release": "^17.0.7"
+  },
+  "devDependencies": {
+    "cod-scripts": "^4.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/urmilagulaskar/xunit_practice_two.git"
+  },
+  "scripts": {
+    "format": "cod-scripts format",
+    "lint": "cod-scripts lint",
+    "lint:commit": "cod-scripts commitlint"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/cod-scripts/eslint.js"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "cod-scripts pre-commit",
+      "commit-msg": "cod-scripts commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  }
+}
