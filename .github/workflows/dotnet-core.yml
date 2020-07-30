@@ -18,6 +18,10 @@ jobs:
     
     - name: Fetch all history for all tag and branches
       run: git fetch --prune
+    - run: |
+        npm install
+        npm run format-check
+        npm run build:github
       
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
@@ -25,14 +29,18 @@ jobs:
         dotnet-version: 3.1.301
     - run: |
         dotnet --version
-        npm install   
         
     - name: Install git version
       uses: ./gitversion/setup
       with:
         versionSpec: '5.3.x'
-    - run: dotnet-gitversion
-
+        
+    - name: Use GitVersion
+      id: gitversion # step id used as reference for output values
+      uses: ./gitversion/execute
+    - run: |
+        echo "FullSemVer: ${{ steps.gitversion.outputs.fullSemVer }}"
+    
     - name: Install dependencies
       run: dotnet restore
     - name: Build
