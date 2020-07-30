@@ -31,7 +31,7 @@ jobs:
       uses: ./
       with: 
         dry_run: true
-        bump: ${{ }}
+        bump: ${{ ... }}
         github_token: ${{ secrets.GITHUB_TOKEN }}
     
     - run: echo '${{ steps.next_version.outputs.version }}' 
