@@ -25,3 +25,10 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+    - id: next_version
+      uses: ./
+      with: 
+        dry_run: true
+        bump: ${{ }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - run: echo '${{ steps.next_version.outputs.version }}' 
