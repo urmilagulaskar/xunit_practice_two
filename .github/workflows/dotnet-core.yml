@@ -2,12 +2,12 @@ name: .NET Core
 
 on:
   push:
-    branches: [ urmilagulaskar-patch-UsingGitVersion, master ]
+    branches: [ master ]
   pull_request:
-    branches: [ urmilagulaskar-patch-UsingGitVersion, master ]
+    branches: [ master ]
 
 jobs:
-  build_and_test:
+  build_test_version:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -44,3 +44,6 @@ jobs:
       uses: gittools/actions/gitversion/execute@v0.9.2
     - run: |
         echo "FullSemVer: ${{ steps.gitversion.outputs.fullSemVer }}"
+        echo "SemVer: ${{ steps.gitversion.outputs.semVer }}"
+        echo "BranchName: ${{ steps.gitversion.outputs.branchName }}"
+        echo "Sha: ${{ steps.gitversion.outputs.sha }}"
