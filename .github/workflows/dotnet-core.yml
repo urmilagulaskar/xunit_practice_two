@@ -35,12 +35,13 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+  
   sonar_scanner:
     needs: build_test_version
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code for scanning
-      - uses: actions/checkout@v1
+        uses: actions/checkout@v1
       - name: Analyze with Sonar Cloud
         uses: sonarsource/sonarcloud-github-action@master
         env:
