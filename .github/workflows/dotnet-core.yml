@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
         
       - name: Fetch all history for all tag and branches
-        run: git fetch --prune 
+        run: git fetch --prune --unshallow
         
       - name: Install git version
         uses: gittools/actions/gitversion/setup@v0.9.2
