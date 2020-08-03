@@ -42,11 +42,11 @@ jobs:
     steps:
       - name: Checkout code for scanning
         uses: actions/checkout@v1
-      - name: Analyze with Sonar Cloud
-        uses: sonarsource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN:  ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN:  ${{ secrets.SONAR_TOKEN }}
+#       - name: Analyze with Sonar Cloud
+#         uses: sonarsource/sonarcloud-github-action@master
+#         env:
+#           GITHUB_TOKEN:  ${{ secrets.GITHUB_TOKEN }}
+#           SONAR_TOKEN:  ${{ secrets.SONAR_TOKEN }}
       - name: Checking MSBuild
         run: |
           dotnet tool install --global dotnet-sonarscanner 
