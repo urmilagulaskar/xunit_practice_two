@@ -3,7 +3,7 @@ WORKDIR /app
 
 # Copy csproj and restore as distinct layers
 COPY ./TimeManagementBooking/*.csproj ./TimeManagementBooking/ 
-RUN dotnet restore app/TimeManagementBookin/*.csproj
+RUN dotnet restore ./TimeManagementBookin/*.csproj
 
 # Copy everything else and build
 COPY . ./
