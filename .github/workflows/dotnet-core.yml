@@ -50,9 +50,9 @@ jobs:
       - name: Checking MSBuild
         run: |
           dotnet tool install --global dotnet-sonarscanner 
-          dotnet sonarscanner begin /k:"urmilagulaskar_xunit_practice_two" /o:"personal-org-one" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="9c779c8727402d9e69fc4f93d02a4e8b84560f71"
+          dotnet sonarscanner begin /k:"urmilagulaskar_xunit_practice_two" /o:"personal-org-one" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login=" ${{ secrets.SONAR_TOKEN }}"
           dotnet build ./xunit_practice_two.sln
-          dotnet sonarscanner end /d:sonar.login="9c779c8727402d9e69fc4f93d02a4e8b84560f71"
+          dotnet sonarscanner end /d:sonar.login=" ${{ secrets.SONAR_TOKEN }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
