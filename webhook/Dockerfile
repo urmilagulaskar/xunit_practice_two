@@ -1,4 +1,4 @@
 FROM python:3.7-alpine
-COPY entrypoint.sh /webhook/entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["/webhook/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
