@@ -1,5 +1,6 @@
 name: .NET Core
-
+env:
+  CONTAINER_IMAGE: dotnet-dockerimage:${{ github.ShortSha }}
 on:
   push:
     branches: [ master ]
@@ -66,9 +67,20 @@ jobs:
           echo "BranchName: ${{ steps.gitversion.outputs.branchName }}"
           echo "Sha: ${{ steps.gitversion.outputs.sha }}"
       - name: Build the docker image
-        run: docker build . --file Dockerfile --tag sysdiglabs/dotnet-dockerimage:latest
+        run: docker build . --file Dockerfile --tag dotnet-dockerimage:${{ steps.gitversion.outputs.ShortSha }}
       - name: Scan image
         uses: sysdiglabs/scan-action@v1
         with:
-          image-tag: "sysdiglabs/dotnet-dockerimage:latest"
+          image-tag: "dotnet-dockerimage:${{ steps.gitversion.outputs.ShortSha }}"
           sysdig-secure-token: ${{ secrets.SYSDIG_SECURE_TOKEN }}
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: urmilag/bulletinboard
+          tags: dotnet-dockerimage:${{ steps.gitversion.outputs.ShortSha }}
+       # Print artifacts
+      - name: Print artifacts
+        run: |
+          echo "Deploy Package : ${{ env.APPLICATION_NAME }}"
