@@ -79,6 +79,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: urmilag/bulletinboard
+          dockerfile:  .
           tags: dotnet-dockerimage:${{ steps.gitversion.outputs.ShortSha }}
        # Print artifacts
       - name: Print artifacts
