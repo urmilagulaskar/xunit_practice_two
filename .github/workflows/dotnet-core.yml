@@ -10,6 +10,15 @@ on:
     branches: [ master ]
 
 jobs:
+  send_notification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: MS team integration for notification
+        uses: urmilagulaskar/xunit_practice_two/webhook@develop
+        with:
+          webhook: ${{secrets.MSTEAMS_WEBHOOK }}
+          message: "First test message"          
+          
   build_test_version:
     runs-on: ${{ matrix.os }}
     strategy:
