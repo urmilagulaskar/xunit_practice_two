@@ -74,9 +74,12 @@ jobs:
           image-tag: "dotnet-dockerimage:${{ steps.gitversion.outputs.ShortSha }}"
           sysdig-secure-token: ${{ secrets.SYSDIG_SECURE_TOKEN }}
       - name: Push Docker images
-#         if: github.ref == 'refs/heads/master'
-        run: |
-          docker push urmilag/bulletinboard:dotnet-dockerimage:${{ steps.gitversion.outputs.ShortSha }}
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: urmilag/bulletinboard
+          tags: dotnet-dockerimage-${{ steps.gitversion.outputs.ShortSha }}
        # Print artifacts
       - name: Print artifacts
         run: |
