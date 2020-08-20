@@ -13,10 +13,11 @@ jobs:
   send_notification:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - name: MS team integration for notification
-        uses: urmilagulaskar/xunit_practice_two/webhook@develop
+        uses: ./webhook
         with:
-          webhook: ${{secrets.MSTEAMS_WEBHOOK }}
+          webhook: ${{ secrets.MSTEAMS_WEBHOOK }}
           message: "First test message"          
           
   build_test_version:
