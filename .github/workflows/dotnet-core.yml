@@ -18,7 +18,8 @@ jobs:
         uses: ./webhook
         with:
           webhook: ${{ secrets.MSTEAMS_WEBHOOK }}
-          message: "First test message"          
+          message: "First test message"  
+          title: 'Success notification'        
           
   build_test_version:
     runs-on: ${{ matrix.os }}
