@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export webhook=$1
-export message=${@:2}
+export message=$2
 export title=${@:3}
 
 cat << EOF > webhook.py
