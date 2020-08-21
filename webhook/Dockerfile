@@ -1,8 +1,8 @@
 FROM ubuntu:latest
 RUN apt-get update && \
       apt-get -y install sudo
-RUN sudo apt --assume-yes install python3.8
-RUN python --version
+RUN sudo apt --assume-yes install python3
+
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
