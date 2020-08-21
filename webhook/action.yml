@@ -7,6 +7,10 @@ inputs:
   message:
     description: 'The message you want to send to your Microsoft Teams channel'
     required: true
+  title:
+    description: 'Title of the message'
+    default: 'Application CI Notification'
+    required: false
 
 runs:
   using: 'docker'
