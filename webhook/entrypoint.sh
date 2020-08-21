@@ -12,7 +12,7 @@ webhook = sys.argv[1]
 message = ' '.join(sys.argv[2:])
 myTeamsMessage = pymsteams.connectorcard(webhook)
 myTeamsMessage.text(message)
-myTeamsMessage.title("Custom title for CI notification")
+myTeamsMessage.title(title)
 myTeamsMessage.send()
 EOF
 
