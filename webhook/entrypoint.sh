@@ -9,7 +9,7 @@ cat << EOF > webhook.py
 import pymsteams
 import sys
 webhook = sys.argv[1]
-message = ' '.join(sys.argv[2:2])
+message = ' '.join(sys.argv[2])
 title= ' '.join(sys.argv[3:])
 myTeamsMessage = pymsteams.connectorcard(webhook)
 myTeamsMessage.text(message)
