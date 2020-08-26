@@ -36,7 +36,7 @@ namespace TimeManagementUT
         public void validateOutput()
         {
             var timeBProc= new TimeBProcessor();
-            Assert.True(timeBProc.BookTime(new Employee{empId=2},DateTime.Today,9));
+            Assert.True(timeBProc.BookTime(new Employee{empId=0},DateTime.Today,9));
         }
     }
 }
