@@ -1,6 +1,7 @@
 name: .NET Core
 env:
   APPLICATION_NAME: demo-app
+  test_result: ""
 on:
   push:
     branches: [ master, develop ]
@@ -46,8 +47,13 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
+      id: run_tests
       if: ${{ success() }}
       run: dotnet test --no-restore --verbosity normal
+    - name: Print result
+      run: |
+        echo "${{ steps.run_tests.output }}"
+
   
   sonar_scanner:
     needs: [build_test_version]
