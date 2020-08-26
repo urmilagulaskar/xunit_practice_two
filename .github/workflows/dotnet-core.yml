@@ -45,19 +45,12 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
-#     - name: Test
-#       run: dotnet test --no-restore --verbosity normal
-  
-  unit_test:
-    needs: build_test_version
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1       
-      - name: unit test execution
-        run: dotnet test --no-restore --verbosity normal
+    - name: Test
+      if: ${{ success() }}
+      run: dotnet test --no-restore --verbosity normal
   
   sonar_scanner:
-    needs: [build_test_version, unit_test]
+    needs: [build_test_version]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code for scanning
