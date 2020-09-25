@@ -65,9 +65,9 @@ jobs:
       - name: Checking MSBuild
         run: |
           dotnet tool install --global dotnet-sonarscanner 
-          dotnet sonarscanner begin /k:"common-project" /o:${{ secrets.SONAR_ORG_KEY }} /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login=${{ secrets.SONAR_TOKEN }}
+          dotnet sonarscanner begin /k:"common-project" /o:${{ secrets.SONAR_ORG_KEY }} /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login=${{ secrets.COMMON_PROJECT }}
           dotnet build ./xunit_practice_two.sln
-          dotnet sonarscanner end /d:sonar.login=${{ secrets.SONAR_TOKEN }}
+          dotnet sonarscanner end /d:sonar.login=${{ secrets.COMMON_PROJECT }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
